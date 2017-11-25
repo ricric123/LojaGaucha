@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LojaGaucha.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Template.cshtml";
+}
+
+<h2>Lista de Usuarios</h2>
+
+<table class="table table-striped table-hover ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoaNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoaEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteSenha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteCPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteTelefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoaNivel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoaNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoaEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteSenha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteCPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteTelefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoaNivel)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.PessoaId }, new { @class = "btn btn-info" })&nbsp; &nbsp; &nbsp;| &nbsp; &nbsp;
+            @Html.ActionLink("Detalhes", "Details", new { id = item.PessoaId }, new { @class = "btn btn-info" })&nbsp; &nbsp; &nbsp;| &nbsp; &nbsp;
+            @Html.ActionLink("Remover", "Delete", new { id=item.PessoaId }, new { @class = "btn btn-warning" })
+        </td>
+    </tr>
+}
+
+</table>

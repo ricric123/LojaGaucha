@@ -1,0 +1,32 @@
+﻿@model LojaGaucha.Models.Categoria
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Template.cshtml";
+}
+
+<h2>Remover Categoria</h2>
+
+<h3>Deseja mesmo remover esta Categoria?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaNome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-default" />&nbsp; &nbsp; | &nbsp; &nbsp;
+            @Html.ActionLink("Voltar ao Menu", "Index" ,"", new {@class = "btn btn-default" })
+        </div>
+    }
+</div>
