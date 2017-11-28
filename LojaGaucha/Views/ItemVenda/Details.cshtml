@@ -1,0 +1,58 @@
+﻿@model LojaGaucha.Models.ItemVenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemVenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemVendaProduto.ProdutoNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemVendaProduto.ProdutoNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemVendaPreco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemVendaPreco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemVendaQuantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemVendaQuantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCarrinho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCarrinho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDaAdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDaAdicao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemVendaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

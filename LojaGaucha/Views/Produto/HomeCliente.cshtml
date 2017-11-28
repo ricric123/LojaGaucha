@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LojaGaucha.Models.Produto>
+
+
+<h1>Perifericos</h1>
+@foreach (var item in Model)
+{
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                @Html.DisplayFor(modelItem => item.ProdutoNome)
+            </h3>
+        </div>
+        <div class="panel-body">
+           
+                <h4>Preço</h4>
+                @Html.DisplayFor(modelItem => item.ProdutoPreco)
+                
+                <h4>Peso</h4>
+                @Html.DisplayFor(modelItem => item.Peso)
+
+           
+        </div>
+        <div>
+            @Html.ActionLink("Detalhe do Produto", "Details", new { idProduto = item.ProdutoId }, new { @class = "btn btn-info" }) &nbsp; &nbsp; - &nbsp; &nbsp;
+            @Html.ActionLink("Adicionar Ao Carrinho", "Create", "ItemVenda", new { idProduto = item.ProdutoId }, new { @class = "btn btn-success" })
+        </div>
+ 
+    </div>
+
+}
+
+     
+
+
+
+
