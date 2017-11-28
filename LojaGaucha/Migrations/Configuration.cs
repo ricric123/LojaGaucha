@@ -26,6 +26,11 @@ namespace LojaGaucha.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Pessoas.AddOrUpdate(
+                new Models.Pessoa { PessoaEmail = "pedro@gmail.com", PessoaId = 2, PessoaNome = "Pedro", ClienteSenha = "senha123", ConfimacaoSenha = "senha123", ClienteCPF = "33333333333", ClienteTelefone = "(41)30299999"  }
+               
+                );
         }
     }
 }
